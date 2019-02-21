@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans|Noto+Serif" rel="stylesheet">
+    <title>Twitter</title>
+</head>
+<body>
+    <header>
+        <i class="fab fa-twitter"></i>
+    </header>
+    <div class="feed">
+        <div class="profile box">
+            <div>
+                <img class="imgProfile" src="images/user.png" alt="ícone de usuário">
+            </div>
+            <div class="userInfo">
+                <h1> Usuária </h1>
+                <p class="user">@usuaria</p>
+                <p class="postedTweets">Tweets <br><span id="numberTweets">0</p>
+            </div>
+        </div>
+        <div class="createPost box">
+            <form>
+                <textarea rows="3" id="post" placeholder="O que está acontecendo?"></textarea><br>
+                <input type="submit" id="buttonTweet" class="button" value="Tweetar" disabled>
+                <span id="count" class="letters">140</span>
+            </form>
+        </div>
+    </div>
+    <section id="timeLine"></section>
+    
+    <script src="twitter.js"></script>
+    <script src="moment.js"></script>
+</body>
+</html>
