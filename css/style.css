@@ -7,31 +7,6 @@
     border: 0;
 }
 
-body {
-    background-color: #e6ecf0;
-}
-
-header {
-    background-color: #00aced;
-    height: 30px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 8px;
-    box-shadow: 0 0 2px 0 black;
-}
-
-.feed {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.box {
-    background-color: white;
-    padding: 15px;
-}
-
 textarea {
     overflow: hidden;
     resize: none;
@@ -45,9 +20,16 @@ textarea:focus {
     outline: 0;
 }
 
+.color-header {
+    background-color: #00aced;
+    color: white;
+}
+
+.user {
+    color: rgb(83, 82, 82);
+}
+
 .button {
-    margin-top: 10px;
-    padding: 10px 20px;
     background-color: #00aced;
     font-weight: 600;
     color: #fff;
@@ -64,50 +46,22 @@ textarea:focus {
     cursor: not-allowed;
 }
 
-.letters {
-    float: right;
-    margin-top: 15px;
+.letters-counter {
     font-family: 'Merriweather Sans', sans-serif;
     color: rgb(32, 32, 32);
 }
 
-.createPost {
-    width: 50%;
-}
-
-.profile {
-    width: 35%;
-}
-
-.tweets {
-    background-color: white;
-    margin: 15px;
-    padding: 3px;
-}
-
-.user {
-    color: rgb(83, 82, 82);
+h1 {
+    font-family: 'Noto Serif', serif;
 }
 
 .postedTweets {
-    margin-top: 15px;
-    font-weight: 700;
     font-size: 15px;
     font-family: 'Merriweather Sans', sans-serif;
 }
 
-h1 {
-    font-family: 'Noto Serif', serif;
-    font-size: 25px;
-}
-
-.profile {
-    display: flex;
-    justify-content: space-evenly;
-    max-height: fit-content;
-}
-
-.imgProfile {
-    height: 100px;
-    margin: 2px;
+.tweets {
+    background-color: #e6ecf0;
+    margin: 15px;
+    padding: 3px;
 }

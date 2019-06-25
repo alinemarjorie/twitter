@@ -7,32 +7,42 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans|Noto+Serif" rel="stylesheet">
     <title>Twitter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <header>
-        <i class="fab fa-twitter"></i>
+    <header class="color-header d-flex justify-content-center mb-3 p-1">
+        <i class="fab fa-twitter "></i>
     </header>
-    <div class="feed">
-        <div class="profile box">
-            <div>
-                <img class="imgProfile" src="images/user.png" alt="ícone de usuário">
+    <div class="container-fluid">    
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-sm-4 d-flex">
+                <div>
+                  <img class="img-fluid col-sm-8" src="images/user.png" alt="ícone de usuário">
+                </div>
+                <div>
+                    <h1 class="font-weight-bold"> Usuária </h1>
+                    <p class="user">@usuaria</p>
+                    <p class="postedTweets mt-3 font-weight-bold">Tweets <br><span id="numberTweets">0</p>
+                </div>
             </div>
-            <div class="userInfo">
-                <h1> Usuária </h1>
-                <p class="user">@usuaria</p>
-                <p class="postedTweets">Tweets <br><span id="numberTweets">0</p>
+            <div class="col-sm-6 m-3">
+                <form>
+                    <textarea class="col-md-12" rows="3" id="post" placeholder="O que está acontecendo?"></textarea><br>
+                    <div class="d-flex justify-content-between">
+                        <input type="submit" id="buttonTweet" class="button mt-3 p-3" value="Tweetar" disabled>
+                        <span id="count" class="letters-counter">140</span>
+                    </div>
+                </form>
             </div>
+            <div class="col-1"></div>
         </div>
-        <div class="createPost box">
-            <form>
-                <textarea rows="3" id="post" placeholder="O que está acontecendo?"></textarea><br>
-                <input type="submit" id="buttonTweet" class="button" value="Tweetar" disabled>
-                <span id="count" class="letters">140</span>
-            </form>
-        </div>
+        <section id="timeLine"></section>
     </div>
-    <section id="timeLine"></section>
-    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
     <script src="twitter.js"></script>
     <script src="moment.js"></script>
 </body>
