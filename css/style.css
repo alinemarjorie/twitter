@@ -7,19 +7,6 @@
     border: 0;
 }
 
-textarea {
-    overflow: hidden;
-    resize: none;
-    width: 100%;
-    font-size: 18px;
-    border-bottom: 2px solid #c1c1c1;
-}
-
-textarea:focus {
-    border-bottom: 2px solid #0084b4;
-    outline: 0;
-}
-
 .color-header {
     background-color: #00aced;
     color: white;
@@ -27,6 +14,11 @@ textarea:focus {
 
 .user {
     color: rgb(83, 82, 82);
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
 }
 
 .button {
@@ -53,6 +45,19 @@ textarea:focus {
 
 h1 {
     font-family: 'Noto Serif', serif;
+}
+
+textarea {
+    overflow: hidden;
+    resize: none;
+    width: 100%;
+    font-size: 18px;
+    border-bottom: 2px solid #c1c1c1;
+}
+
+textarea:focus {
+    border-bottom: 2px solid #0084b4;
+    outline: 0;
 }
 
 .postedTweets {

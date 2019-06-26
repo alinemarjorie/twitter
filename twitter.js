@@ -1,73 +1,72 @@
-const postElement = document.getElementById("post");
-const countElement = document.getElementById("count");
-const buttonTweetElement = document.getElementById("buttonTweet");
-const quant = 140;
-const user = "Usuária:"
+$(document).ready(function() {
+    const quant = 140;
+    const user = "Usuária:";
 
-//Postar
-buttonTweetElement.addEventListener("click", postTweet);
+    const buttonTweetElement = $("#buttonTweet");
+    const postElement = $("#post");
+    const countElement = $("#count");
 
-function postTweet(event) {
-    event.preventDefault();
-    
-    let paragraph = document.createElement("p");
-    paragraph.className = "tweets";
-    paragraph.innerHTML = user + "<br>" + (postElement.value + "<br>" + moment().format('HH:mm'));
-    document.getElementById('timeLine').prepend(paragraph);
-    postElement.value = "";
-    counterTweets();
-    keyup();
-}
 
-//Chamando função
-postElement.addEventListener("keyup", keyup);
+    buttonTweetElement.click((e) => {
+        e.preventDefault();
 
-function keyup() {
-    limiteTextArea();
-    postNull();
-    countColor();
-    autoResize();
-}
+        $("#timeLine").prepend(
+            `
+            <article class="tweets">           
+            <p class="font-weight-bold">${user}</p>
+            <p> ${postElement.val()}</p>
+            <div>${moment().format('HH:mm')}</div>
+            </article>
+            `
+        )
 
-//Contador
-function limiteTextArea() {
-    let resto = quant - postElement.value.length;
-    countElement.innerHTML = resto;
-}
+        postElement.val("");
+        countElement.html("140");
+        buttonTweetElement.attr("disabled","");       
+    });
 
-//Bloquear botão
-function postNull() {
-    if (postElement.value !== "" && postElement.value.length <= 140){
-        buttonTweetElement.removeAttribute("disabled","");
-    } else {
-        buttonTweetElement.setAttribute("disabled","");
+    buttonTweetElement.click(() => {
+        let tweets = $("#timeLine article").length;
+        $("#numberTweets").html(tweets);
+    });
+  
+    postElement.keyup(() => {
+        postNull();
+        counter();
+        resize();
+        counterColor();
+    });
+
+    function postNull() {
+        if (postElement.val() !== "" && postElement.val().length <= 140){
+            buttonTweetElement.removeAttr("disabled","");
+        } else {
+            buttonTweetElement.attr("disabled","");
+        }
     }
-}
 
-//Mudar cor
-function countColor() {
-    if (postElement.value.length < 120) {
-        countElement.style.color = "rgb(32, 32, 32)";
-    } 
-    if (postElement.value.length >= 120) {
-        countElement.style.color = "orange";
+    function counter() {
+        let resto = quant - postElement.val().length;
+        countElement.html(resto);
     }
-    if (postElement.value.length >= 130) {
-        countElement.style.color = "red";
+
+    function resize() {
+        postElement.css({"height":"auto", "padding":"0"});
+        postElement.css({"height": postElement.prop("scrollHeight") + "px"});
     }
-    if (postElement.value.length > 140) {
-        countElement.style.color = "grey";
-    } 
-}
 
-//Redimensionar área do texto
-function autoResize() {
-    postElement.style.cssText = "height:auto; padding:0";
-    postElement.style.cssText = "height:" + postElement.scrollHeight + "px";
-}
-
-//Contar tweets
-function counterTweets() {
-    let tweets = document.getElementById("timeLine").childElementCount;
-    document.getElementById("numberTweets").innerHTML = tweets;
-}
+    function counterColor() {
+        if (postElement.val().length < 120) {
+            countElement.css({"color":"rgb(32, 32, 32)"});
+        } 
+        if (postElement.val().length >= 120) {
+            countElement.css({"color":"orange"});
+        }
+        if (postElement.val().length >= 130) {
+            countElement.css({"color":"red"});
+        }
+        if (postElement.val().length > 140) {
+            countElement.css({"color":"grey"});
+        } 
+    }
+});
