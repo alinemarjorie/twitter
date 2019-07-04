@@ -13,9 +13,9 @@ $(document).ready(function() {
         $("#timeLine").prepend(
             `
             <article class="tweets">           
-            <p class="font-weight-bold">${user}</p>
-            <p> ${postElement.val()}</p>
-            <div>${moment().format('HH:mm')}</div>
+                <p class="font-weight-bold">${user}</p>
+                <p> ${postElement.val()}</p>
+                <div>${moment().format('HH:mm')}</div>
             </article>
             `
         )
