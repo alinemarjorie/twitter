@@ -6,6 +6,6 @@ Criar uma página que tem como objetivo replicar o feed de posts do Twitter.
 
 ## Evolução do projeto
 - A primeira versão foi feita com HTML, CSS e JS puro.
-- A versão atual foi refatorada para incluir Bootstrap e Jquery.
+- A versão atual foi refatorada com Bootstrap e Jquery.
 
 
